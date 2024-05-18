@@ -16,7 +16,7 @@ int colonneValide(){
     int colonne;
     bool isNumeric = false;
     while (!isNumeric) {
-        cout << "Entrez l'index de la colonne où vous voulez jouer à partir de l'index 0 : ";
+        cout << "Entrez l'index de la colonne ou vous voulez jouer a partir de l'index 0 : ";
         string input;
         cin >> input;
 
@@ -43,9 +43,7 @@ void Game::start()
 
         if (joueurs[indexJoueur].getName() == "AI")
         {
-            cout << "Test6" << endl;
             colonne = joueurs->getAI().bestMove(board, 2);
-            cout << "Test3" << endl;
         }
         else
         {

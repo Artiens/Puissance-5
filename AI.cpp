@@ -33,7 +33,6 @@ int AI::minimax(Board board, int profondeur, bool maximizingPlayer)
                 newBoard.placeJeton(col, jeton);
                 int eval = minimax(newBoard, profondeur - 1, false);
                 maxEval = max(maxEval, eval);
-                newBoard.~Board();
             }
         }
         return maxEval;
@@ -49,7 +48,6 @@ int AI::minimax(Board board, int profondeur, bool maximizingPlayer)
                 newBoard.placeJeton(col, jetonAdv);
                 int eval = minimax(newBoard, profondeur - 1, true);
                 minEval = min(minEval, eval);
-                newBoard.~Board();
             }
         }
         return minEval;
@@ -176,7 +174,6 @@ int AI::bestMove(Board board, int depth)
                 bestScore = score;
                 bestMove = col;
             }
-            newBoard.~Board();
         }
     }
     return bestMove;
